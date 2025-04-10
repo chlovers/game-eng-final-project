@@ -9,10 +9,12 @@ public class Breakablewall : MonoBehaviour
 
     public GameObject hammer;
     public GameObject Wall;
+    public GameObject hammerinv;
 
     private void Start()
     {
         hammerpickedup = false;
+        hammerinv.SetActive(false);
     }
 
     public float breakDistance = 3f;
@@ -23,6 +25,7 @@ public class Breakablewall : MonoBehaviour
         if (!hammer.activeSelf)
         {
             hammerpickedup = true;
+            hammerinv.SetActive(true);
         }
 
         if (Input.GetKeyDown(KeyCode.Space) && Wall != null && hammerpickedup)
@@ -31,6 +34,7 @@ public class Breakablewall : MonoBehaviour
             if (distance <= breakDistance)
             {
                 Destroy(Wall);
+                hammerinv.SetActive(false);
             }
         }
     }
