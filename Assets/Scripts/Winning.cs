@@ -13,7 +13,7 @@ public class Winning : MonoBehaviour
     public GameObject gameover;
    
     bool playernear;
-    
+  
     
     // Start is called before the first frame update
     void Start()
@@ -40,14 +40,12 @@ public class Winning : MonoBehaviour
             old.SetActive (false);
             old2.SetActive (true);
             gatetext.SetActive (false);
+           gameover.SetActive (true);
             
 
         }
 
-        if (!gatetext.activeSelf && playernear && Input.GetKeyDown(KeyCode.Space))
-        {
-            gameover.SetActive (true);
-        }
+
 
     }
 
