@@ -7,7 +7,7 @@ public class Interactionobject : MonoBehaviour
     public GameManager gameManager;
     
     
-    public GameObject signtxt;
+   // public GameObject signtxt;
 
 
     public enum Interactions
@@ -21,7 +21,7 @@ public class Interactionobject : MonoBehaviour
 
     private void Start()
     {
-        signtxt.SetActive(false);
+      //  signtxt.SetActive(false);
     }
 
     private DailogManager dailogManager;
@@ -68,7 +68,7 @@ public class Interactionobject : MonoBehaviour
     {
 
         Debug.Log("hi you are reading a sign!");
-        signtxt.SetActive(true);
+       // signtxt.SetActive(true);
         StartCoroutine(fadeout());
         
     }
@@ -84,7 +84,7 @@ public class Interactionobject : MonoBehaviour
     IEnumerator fadeout()
     {
         yield return new WaitForSeconds(1.5f);
-        signtxt.SetActive(false);
+       // signtxt.SetActive(false);
     }
 
     IEnumerator Fadein()
