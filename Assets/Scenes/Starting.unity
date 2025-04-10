@@ -6426,6 +6426,10 @@ PrefabInstance:
       propertyPath: hammerinv
       value: 
       objectReference: {fileID: 856308460}
+    - target: {fileID: 5364351553496919723, guid: c9c5ad6c0abe96141baf22a0ff1ef11b, type: 3}
+      propertyPath: m_SortingOrder
+      value: 99
+      objectReference: {fileID: 0}
     - target: {fileID: 7787758462568721910, guid: c9c5ad6c0abe96141baf22a0ff1ef11b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.0297248
