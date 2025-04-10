@@ -30,7 +30,7 @@ public class Breakablewall : MonoBehaviour
             float distance = Vector3.Distance(player.position, Wall.transform.position);
             if (distance <= breakDistance)
             {
-                Wall.SetActive(false);
+                Destroy(Wall);
             }
         }
     }
