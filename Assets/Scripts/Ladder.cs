@@ -4,15 +4,52 @@ using UnityEngine;
 
 public class Ladder : MonoBehaviour
 {
-    // Start is called before the first frame update
+    bool ladderhave;
+    public GameObject ladder;
+    public GameObject block;
+    public GameObject lighttext;
+    bool playernear;
+    
+
+   
     void Start()
     {
-        
+        block.SetActive(true);
+        ladderhave = false;
+
     }
 
-    // Update is called once per frame
+   
     void Update()
     {
-        
+        if (ladder.activeSelf)
+        { 
+        ladderhave = true;
+            lighttext.SetActive(false);
+        }
+
+        if (ladderhave && playernear && Input.GetKeyDown(KeyCode.Space))
+        {
+            ladder.SetActive(false);
+            ladderhave = false ;
+            block.SetActive(false);
+        }
+
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            playernear = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            playernear = false;
+        }
     }
 }
